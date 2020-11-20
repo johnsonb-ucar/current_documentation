@@ -1,0 +1,548 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Compiling DART &mdash; DART Documentation 9.9.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Verifying Installation" href="verifying-installation.html" />
+    <link rel="prev" title="Downloading DART" href="downloading-dart.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/logo-wordmark-light-dart.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/what-is-dart.html">What is DART?</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Installation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="system-requirements.html">System Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fortran-compiler.html">Fortran90 Compiler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="locating-netcdf-library.html">Locating NetCDF Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="downloading-dart.html">Downloading DART</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Compiling DART</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#customizing-the-build-scripts-overview">Customizing the build scripts — overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#building-and-customizing-the-mkmf-template-file">Building and Customizing the ‘mkmf.template’ file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#customizing-the-path-names-files">Customizing the path names files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#building-the-lorenz-63-dart-project">Building the Lorenz_63 DART project</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="verifying-installation.html">Verifying Installation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Observations</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../observations/background.html">Background</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../observations/history.html">History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../observations/observation-quantities.html">Observation Quantities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../observations/observation-types.html">Observation Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../observations/complex-observations.html">Complex Observations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../observations/example-observation-definition.html">Example Observation Definition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../observations/observation-sequence-file.html">Observation Sequence File</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Radiance Support</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../radiance-support/rttov.html">RTTOV</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Education</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../education/dart-lab.html">DART LAB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../education/dart-tutorial.html">DART Tutorial</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/contributors-guide.html">Contributors’ Guide</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">DART Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Compiling DART</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/installation/compiling-dart.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="compiling-dart">
+<h1>Compiling DART<a class="headerlink" href="#compiling-dart" title="Permalink to this headline">¶</a></h1>
+<p>Now that the DART code has been downloaded and the prerequisites have
+been verified, you can now begin building and verifying the DART
+installation.</p>
+<div class="section" id="customizing-the-build-scripts-overview">
+<h2>Customizing the build scripts — overview<a class="headerlink" href="#customizing-the-build-scripts-overview" title="Permalink to this headline">¶</a></h2>
+<p>DART executable programs are constructed using two tools: <em>mkmf</em>, and
+<em>make</em>. The <em>make</em> utility is a very commonly used tool that requires a
+user-defined input file (a <code class="docutils literal notranslate"><span class="pre">Makefile</span></code>) that records dependencies
+between different source files. <em>make</em> then performs actions to the
+source hierarchy, in order of dependence, when one or more of the source
+files is modified. <em>mkmf</em> is a <em>perl</em> script that generates a <em>make</em>
+input file (named <em>Makefile</em>) and an example namelist
+<code class="docutils literal notranslate"><span class="pre">input.nml.&lt;program&gt;_default</span></code> with default values.</p>
+<p><em>mkmf</em> (think <em>“make makefile”</em>) requires two separate input files. The
+first is a template file which specifies the commands required for a
+specific Fortran90 compiler and may also contain pointers to directories
+containing pre- compiled utilities required by the DART system. <strong>This
+template file will need to be modified to reflect your system as
+detailed in the next section</strong>.</p>
+<p>The second input file is a <code class="docutils literal notranslate"><span class="pre">path_names</span></code> file which is supplied by DART
+and can be used without modification. An <em>mkmf</em> command is executed
+which uses the <code class="docutils literal notranslate"><span class="pre">path_names</span></code> file and the mkmf template file to produce
+a <code class="docutils literal notranslate"><span class="pre">Makefile</span></code> which is subsequently used by the standard <em>make</em>
+utility.</p>
+<p>Shell scripts that execute the <em>mkmf</em> command for all standard DART
+executables are provided with the standard DART distribution. For more
+information on the <a class="reference external" href="https://github.com/NOAA-GFDL/mkmf">mkmf</a> tool
+please see the <a class="reference external" href="https://extranet.gfdl.noaa.gov/~vb/mkmf.html">mkmf
+documentation</a>.</p>
+</div>
+<div class="section" id="building-and-customizing-the-mkmf-template-file">
+<h2>Building and Customizing the ‘mkmf.template’ file<a class="headerlink" href="#building-and-customizing-the-mkmf-template-file" title="Permalink to this headline">¶</a></h2>
+<p>A series of templates for different compilers/architectures can be found
+in the <em>DARTHOME/build_templates</em> directory and have names with
+extensions that identify the compiler, the architecture, or both. This
+is how you inform the build process of the specifics of your system.
+<strong>Our intent is that you copy one that is similar to your system into
+``DARTHOME/build_templates/mkmf.template`` and customize it.</strong> For the
+discussion that follows, knowledge of the contents of one of these
+templates (e.g. <code class="docutils literal notranslate"><span class="pre">DARTHOME/build_templates/mkmf.template.intel.linux</span></code>)
+is needed. Note that only the LAST lines of the file are shown here. The
+first portion of the file is a large comment block that provides
+valuable advice on how to customize the <em>mkmf</em> template file if needed.</p>
+<p>MPIFC = mpif90 MPILD = mpif90 FC = ifort LD = ifort NETCDF = /usr/local
+INCS = -I<span class="math notranslate nohighlight">\({NETCDF}/include LIBS = -L\)</span>{NETCDF}/lib -lnetcdf
+-lnetcdff FFLAGS = -O2 $(INCS) LDFLAGS = $(FFLAGS) $(LIBS)</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 62%" />
+<col style="width: 38%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>variable</p></th>
+<th class="head"><p>value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>FC</p></td>
+<td><p>the Fortran compiler</p></td>
+</tr>
+<tr class="row-odd"><td><p>LD</p></td>
+<td><p>the name of the loader;
+typically, the same as
+the Fortran compiler</p></td>
+</tr>
+<tr class="row-even"><td><p>MPIFC</p></td>
+<td><p>the MPI Fortran
+compiler; see <a class="reference external" href="dart_mpi.md">the DART
+MPI
+intro
+duction</a>
+for more info</p></td>
+</tr>
+<tr class="row-odd"><td><p>MPILD</p></td>
+<td><p>the MPI loader; see <a class="reference external" href="dart_mpi.md">the
+DART MPI
+intro
+duction</a>
+for more info</p></td>
+</tr>
+<tr class="row-even"><td><p>NETCDF</p></td>
+<td><p>the location of your
+root netCDF
+installation, which is
+assumed to contain
+<code class="docutils literal notranslate"><span class="pre">netcdf.mod</span></code> and
+<code class="docutils literal notranslate"><span class="pre">typesizes.mod</span></code> in the
+include subdirectory.
+Note that the value of
+the NETCDF variable will
+be used by the “INCS”
+and “LIBS” variables.</p></td>
+</tr>
+<tr class="row-odd"><td><p>INCS</p></td>
+<td><p>the includes passed to
+the compiler during
+compilation. Note you
+may need to change this
+if your netCDF includes
+<code class="docutils literal notranslate"><span class="pre">netcdf.mod</span></code> and
+<code class="docutils literal notranslate"><span class="pre">typesizes.mod</span></code> are
+not in the standard
+location under the
+<code class="docutils literal notranslate"><span class="pre">include</span></code> subdirectory
+of NETCDF.</p></td>
+</tr>
+<tr class="row-even"><td><p>LIBS</p></td>
+<td><p>the libraries passed to
+“FC” (or “MPIFC”) during
+compilation. Note you
+may need to change this
+if the netCDF libraries
+<code class="docutils literal notranslate"><span class="pre">libnetcdf</span></code> and
+<code class="docutils literal notranslate"><span class="pre">libnetcdff</span></code> are not
+in the standard location
+under the “lib”
+subdirectory of NETCDF.</p></td>
+</tr>
+<tr class="row-odd"><td><p>FFLAGS</p></td>
+<td><p>the Fortran flags passed
+to “FC” (or “MPIFC”)
+during compilation.
+There are often flags
+used for optimized code
+versus debugging code.
+See your particular
+compiler’s documentation
+for more information.</p></td>
+</tr>
+<tr class="row-even"><td><p>LDFLAGS</p></td>
+<td><p>the linker flags passed
+to <em>LD</em> during
+compilation. See your
+particular linker’s
+documentation for more
+information.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="customizing-the-path-names-files">
+<h2>Customizing the path names files<a class="headerlink" href="#customizing-the-path-names-files" title="Permalink to this headline">¶</a></h2>
+<p>Several <code class="docutils literal notranslate"><span class="pre">path_names_*</span></code> files are provided in the “work” directory for
+each specific model. In this case, the directory of interest is
+<code class="docutils literal notranslate"><span class="pre">DARTHOME/models/lorenz_63/work</span></code> (see the next section). Since each
+model comes with its own set of files, the <code class="docutils literal notranslate"><span class="pre">path_names_*</span></code> files
+typically need no customization. However, modifying these files will be
+required if you wish to add your model to DART. See <a class="reference external" href="#RunWithMyModel">How do I run DART
+with my model?</a> for more information.</p>
+</div>
+<div class="section" id="building-the-lorenz-63-dart-project">
+<h2>Building the Lorenz_63 DART project<a class="headerlink" href="#building-the-lorenz-63-dart-project" title="Permalink to this headline">¶</a></h2>
+<p>In order to get started with DART, here we use the Lorenz 63 model,
+which is a simple ODE model with only three variables. DART supports
+models with many orders of magnitude more variables than three, but if
+you can compile and run the DART code for any ONE of the models, you
+should be able to compile and run DART for ANY of the models. For
+time-dependent filtering known as <strong>cycling</strong>, where observations are
+iteratively assimilated at multiple time steps, DART requires the
+ability to move the model state forward in time. For low-order models,
+this may be possible with a Fortran function call, but for higher-order
+models, this is typically done outside of DART’s execution control.
+However, the assimilation itself is conducted the same way for <strong>all</strong>
+models. For this reason, here we focus solely on the Lorenz 63 model. If
+so desired, see <a class="reference external" href="#Lorenz63">The Lorenz 63 model: what is it and why should we
+care?</a> for more information on this simple yet
+surprisingly relevant model. See <a class="reference external" href="#dartWorkflow">A high-level workflow of DA in
+DART</a> for further information regarding the DART
+workflow if you prefer to do so before building the code.</p>
+<p>There are seven separate, stand-alone programs that are typically
+necessary for the end-to-end execution of a DART experiment; see below
+or the <a class="reference external" href="#WhatIsDART">What is DART?</a> section for more information on
+these programs and their interactions. All DART programs are compiled
+the same way, and each model directory has a directory called <code class="docutils literal notranslate"><span class="pre">work</span></code>
+that has the components necessary to build the executables.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>some higher-order models have many more than seven programs; for
+example, the Weather Research and Forecasting (WRF) model,
+which is run operationally around the world to predict regional
+weather, has 28 separate programs. Nonetheless, each of these
+programs are built the same way.</p>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">quickbuild.csh</span></code> in each directory builds all seven programs
+necessary for Lorenz 63. Describing what the <code class="docutils literal notranslate"><span class="pre">quickbuild.csh</span></code> script
+does is useful for understanding how to get started with DART.</p>
+<p>The following shell commands show how to build two of these seven
+programs for the lorenz_63 model: <em>preprocess</em> and <em>obs_diag</em>.
+<em>preprocess</em> is a special program that needs to be built and run to
+automatically generate Fortran code that is used by DART to support a
+subset of observations - which are (potentially) different for every
+model. Once <em>preprocess</em> has been run and the required Fortran code has
+been generated, any of the other DART programs may be built in the same
+way as <em>obs_diag</em> in this example. Thus, the following runs <em>mkmf</em> to
+make a <code class="docutils literal notranslate"><span class="pre">Makefile</span></code> for <em>preprocess</em>, makes the <em>preprocess</em> program,
+runs <em>preprocess</em> to generate the Fortran observation code, runs <em>mkmf</em>
+to make a <code class="docutils literal notranslate"><span class="pre">Makefile</span></code> for <em>obs_diag</em>, then makes the <em>obs_diag</em>
+program:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> DARTHOME/models/lorenz_63/work
+$ ./mkmf_preprocess
+$ make
+$ ./preprocess
+$ ./mkmf_obs_diag
+$ make
+</pre></div>
+</div>
+<p>The remaining executables are built in the same fashion as <em>obs_diag</em>:
+run the particular <em>mkmf</em> script to generate a Makefile, then execute
+<em>make</em> to build the corresponding program.</p>
+<p>Currently, DART executables are built in a <code class="docutils literal notranslate"><span class="pre">work</span></code> subdirectory under
+the directory containing code for the given model. The Lorenz_63 model
+has seven <code class="docutils literal notranslate"><span class="pre">mkmf_xxxxxx</span></code> files for the following programs:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Program</p></th>
+<th class="head"><p>Purpose</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="../../assimilation_code/programs/preprocess/preprocess.html">preproces
+s</a></p></td>
+<td><p>creates custom source code for
+just the observations of interest</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="../../assimilation_code/programs/create_obs_sequence/create_obs_sequence.html">cre
+ate_obs_sequence</a></p></td>
+<td><p>specify a (set) of observation
+characteristics taken by a
+particular (set of) instruments</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="../../assimilation_code/programs/create_fixed_network_seq/create_fixed_network_seq.html">create_fixed_netwo
+rk_seq</a></p></td>
+<td><p>specify the temporal attributes
+of the observation sets</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="../../assimilation_code/programs/perfect_model_obs/perfect_model_obs.html">perfect_model_obs</a></p></td>
+<td><p>spinup and generate “true state”
+for synthetic observation
+experiments</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="../../assimilation_code/programs/filter/filter.html">filter</a></p></td>
+<td><p>perform data assimilation
+analysis</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="../../assimilation_code/programs/obs_diag/threed_sphere/obs_diag.html">obs_diag</a></p></td>
+<td><p>creates observation-space
+diagnostic files in netCDF format
+to support visualization and
+quantification.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="../../assimilation_code/programs/obs_sequence_tool/obs_sequence_tool.html">obs_sequence_tool</a></p></td>
+<td><p>manipulates observation sequence
+files. This tool is not generally
+required (particularly for
+low-order models) but can be used
+to combine observation sequences
+or convert from ASCII to binary
+or vice-versa. Since this is a
+rather specialized routine, we
+will not cover its use further in
+this document.</p></td>
+</tr>
+</tbody>
+</table>
+<p>As mentioned above, <code class="docutils literal notranslate"><span class="pre">quickbuild.csh</span></code> is a script that will build every
+executable in the directory. There is an optional argument that will
+additionally build the MPI-enabled versions which will not be covered in
+this set of instructions. See The DART MPI introduction page for more
+information on using DART with MPI.</p>
+<p>Running <code class="docutils literal notranslate"><span class="pre">quickbuild.csh</span></code> will compile all the executables mentioned
+above for the lorenz_63 model:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> DARTHOME/models/lorenz_63/work
+$ ./quickbuild.csh
+</pre></div>
+</div>
+<p>The result (hopefully) is that seven executables now reside in your work
+directory.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The most common problem is that the netCDF libraries and/or include
+files were not found in the specified location(s). The second most
+common problem is that the netCDF libraries were built with a
+different compiler than the one used for DART. Find (or compile) a
+compatible netCDF library, edit the <code class="docutils literal notranslate"><span class="pre">DARTHOME/build_templates/mkmf.template</span></code>
+to point to the correct locations of the includes and library files,
+recreate the <code class="docutils literal notranslate"><span class="pre">Makefile</span></code>s, and try again.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="verifying-installation.html" class="btn btn-neutral float-right" title="Verifying Installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="downloading-dart.html" class="btn btn-neutral float-left" title="Downloading DART" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, University Corporation for Atmospheric Research
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

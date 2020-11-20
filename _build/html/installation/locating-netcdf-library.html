@@ -1,0 +1,291 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Locating NetCDF Library &mdash; DART Documentation 9.9.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Downloading DART" href="downloading-dart.html" />
+    <link rel="prev" title="Fortran90 Compiler" href="fortran-compiler.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/logo-wordmark-light-dart.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/what-is-dart.html">What is DART?</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Installation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="system-requirements.html">System Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fortran-compiler.html">Fortran90 Compiler</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Locating NetCDF Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="downloading-dart.html">Downloading DART</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling-dart.html">Compiling DART</a></li>
+<li class="toctree-l1"><a class="reference internal" href="verifying-installation.html">Verifying Installation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Observations</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../observations/background.html">Background</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../observations/history.html">History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../observations/observation-quantities.html">Observation Quantities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../observations/observation-types.html">Observation Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../observations/complex-observations.html">Complex Observations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../observations/example-observation-definition.html">Example Observation Definition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../observations/observation-sequence-file.html">Observation Sequence File</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Radiance Support</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../radiance-support/rttov.html">RTTOV</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Education</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../education/dart-lab.html">DART LAB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../education/dart-tutorial.html">DART Tutorial</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/contributors-guide.html">Contributors’ Guide</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">DART Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Locating NetCDF Library</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/installation/locating-netcdf-library.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="locating-netcdf-library">
+<h1>Locating NetCDF Library<a class="headerlink" href="#locating-netcdf-library" title="Permalink to this headline">¶</a></h1>
+<p>DART uses the <a class="reference external" href="https://www.unidata.ucar.edu/software/netcdf/">netCDF</a>
+self-describing data format for storing the results of assimilation
+experiments. These files have the extension <em>.nc</em> and can be read by a
+number of standard data analysis tools. In particular, DART also makes
+use of the F90 netCDF interface which is available through the
+<code class="docutils literal notranslate"><span class="pre">netcdf.mod</span></code> and <code class="docutils literal notranslate"><span class="pre">typesizes.mod</span></code> modules and the <code class="docutils literal notranslate"><span class="pre">libnetcdf</span></code>
+library. Depending on the version, the <code class="docutils literal notranslate"><span class="pre">libnetcdff</span></code> library is also
+often required.</p>
+<p>If the netCDF library does not exist on your system, you must build it
+(as well as the F90 interface modules).</p>
+<dl class="field-list simple">
+<dt class="field-odd">warning</dt>
+<dd class="field-odd"><p><em>WARNING</em>: You must build netCDF with the same compiler</p>
+</dd>
+</dl>
+<p>(including version) you plan to use for compiling DART. In practice this
+means that even if you have a netCDF distribution on your system, you
+may need to recompile netCDF in a separate location to match the
+compiler you will use for DART. The library and instructions for
+building the library or installing from a package manager may be found
+at the netCDF home page: <a class="reference external" href="https://www.unidata.ucar.edu/software/netcdf/">https://www.unidata.ucar.edu/software/netcdf/</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">exclamation</dt>
+<dd class="field-odd"><p><em>IMPORTANT</em>: the normal location for the netCDF Fortran</p>
+</dd>
+</dl>
+<p>modules and libraries would be in the <code class="docutils literal notranslate"><span class="pre">include</span></code> and <code class="docutils literal notranslate"><span class="pre">lib</span></code>
+subdirectories of the netCDF installation. However, different compilers
+or package managers sometimes place the modules and/or libraries into
+non-standard locations. It is required that both modules and the
+libraries be present.</p>
+<dl class="field-list simple">
+<dt class="field-odd">dart</dt>
+<dd class="field-odd"><p><em>NOTE:</em> The location of the netCDF library, <code class="docutils literal notranslate"><span class="pre">libnetcdf.a</span></code>, and</p>
+</dd>
+</dl>
+<p>the locations of both <code class="docutils literal notranslate"><span class="pre">netcdf.mod</span></code> and <code class="docutils literal notranslate"><span class="pre">typesizes.mod</span></code> will be
+needed later. Depending on the version of netCDF and the build options
+selected, the Fortran interface routines may be in a separate library
+named <code class="docutils literal notranslate"><span class="pre">libnetcdff.a</span></code> (note the two F’s). In this case both libraries
+are required to build executables.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="downloading-dart.html" class="btn btn-neutral float-right" title="Downloading DART" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="fortran-compiler.html" class="btn btn-neutral float-left" title="Fortran90 Compiler" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, University Corporation for Atmospheric Research
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
